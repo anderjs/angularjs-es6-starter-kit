@@ -4,7 +4,7 @@
   "description": "AngularJS aka Angular 1, ES6, Webpack Starter Kit Project which includes Bootstrap 4 also.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --progress --open",
+    "start": "webpack serve --progress --open --info",
     "build": "NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve-build": "yarn build && node ./index.js"

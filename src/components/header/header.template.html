@@ -1,0 +1,133 @@
+<div class="fixed">
+  <div class="text-left">
+    <div class="header-typography">
+      <a class="p360-link">{{data.rut}}</a>
+    </div>
+    <div class="header-client">
+      <span class="p360-link hovered"> {{data.name}} </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row text-left my-1">
+        <div class="header-typography col-md-2">
+          <b>Giro Afecta</b>
+        </div>
+        <div class="header-typography col-md-3">
+          {{data.order}}
+        </div>
+        <div class="header-typography col-md-2">
+          <b>Tipo de Cliente / Cuadrante</b>
+        </div>
+        <div class="header-typography col-md-1">
+          <span>
+            {{data.tipoCliente | exist}}
+          </span>
+        </div>
+        <div class="header-typography col-md-1">
+          <b>Nota Cliente</b>
+        </div>
+        <div class="header-typography col-md-1">
+          {{data.clientNote | exist}}
+        </div>
+      </div>
+      <!----><!---->
+      <div class="row text-left my-1">
+        <div class="header-typography col-md-2">
+          <b>Ejecutivo / Sucursal</b>
+        </div>
+        <div class="header-typography col-md-3">
+          {{data.executive | transform}} / {{data.branch | transform}}
+        </div>
+        <div class="header-typography col-md-2">
+          <b>Monto Línea $</b>
+        </div>
+        <div class="header-typography col-md-1">
+          {{data.amount}}
+        </div>
+        <div class="header-typography col-md-1">
+          <b>Nota Deudor</b>
+        </div>
+        <div class="header-typography col-md-1">
+          {{data.debtorNote | exist}}
+        </div>
+      </div>
+      <!----><!---->
+      <div class="row text-left my-1">
+        <div class="header-typography col-md-2">
+          <b>Jefe de Grupo / Grupo</b>
+        </div>
+        <div class="header-typography col-md-3">
+          {{data.chief}} / {{data.group}}
+        </div>
+        <div class="header-typography col-md-2">
+          <b>Cliente - Deudor</b>
+        </div>
+        <div class=" header-typography col-md-1">
+          {{data.isDebtor}}
+        </div>
+        <div class="header-typography col-md-1">
+          <factoring-dicom open="dicom" on-click="ngController.$handleOpenDicom()" on-cancel="ngController.$handleCloseDicom()">
+            <b>Dicom</b>
+          </factoring-dicom>
+        </div>
+        <div class="header-typography col-md-1">
+          {{data.dicom}}
+        </div>
+      </div>
+      <!----><!---->
+      <div class="row text-left my-1">
+        <div class="header-typography col-md-2">
+          <b>Sub Segmento</b>
+        </div>
+        <div class="header-typography col-md-3">
+          {{data.subsegment}}
+        </div>
+        <div class="header-typography col-md-2">
+          <b> Clasificación Rango Cliente</b>
+        </div>
+        <div class="header-typography col-md-1">
+          {{data.risk}}
+        </div>
+        <div class="header-typography col-md-1">
+          <b>Bloqueo</b>
+        </div>
+        <div class="header-typography col-md-1">
+          <factoring-tooltip ref="Logica!">
+            {{data.block}}
+          </factoring-tooltip>
+        </div>
+      </div>
+      <!----><!---->
+      <div class="row text-left my-1">
+        <div class="header-typography col-md-2">
+          <b>Gestionador de Cobranzas</b>
+        </div>
+        <div class="header-typography col-md-3">
+          {{data.manager}}
+        </div>
+        <div class="header-typography col-md-2">
+          <factoring-watch open="watch" on-click="ngController.$handleOpenWatch()" on-cancel="ngController.$handleCloseWatch()">
+            <b>Clasificación Watch</b>
+          </factoring-watch>
+        </div>
+        <div class="header-typography col-md-1">
+          {{data.watch}}
+        </div>
+        <div class="header-typography col-md-1">
+          <b>Fecha Dicom</b>
+        </div>
+        <div class="header-typography col-md-1">
+          {{data.date}}
+        </div>
+      </div>
+      <!----><!---->
+    </div>
+    <!----><!---->
+    <div class="col-md-2">
+      <div class="score-header">
+        <factoring-scoreboard></factoring-scoreboard>
+      </div>
+    </div>
+  </div>
+</div>
